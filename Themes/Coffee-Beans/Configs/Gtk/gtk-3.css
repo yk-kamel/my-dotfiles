@@ -1,0 +1,19 @@
+/* --- COFFEE-BEANS UNIFIED THEME (GTK3) --- */
+
+/* 1. LIGHT MODE (Default) */
+@define-color theme_bg_color           #e0d9d5;
+@define-color theme_base_color         #e0d9d5;
+@define-color theme_fg_color           #110d08;
+@define-color theme_selected_bg_color  #ae6a24;
+@define-color theme_selected_fg_color  #e0d9d5;
+@define-color borders                  #b98f4e;
+
+/* 2. DARK MODE OVERRIDE */
+@media (prefers-color-scheme: dark) {
+    @define-color theme_bg_color           #110d08;
+    @define-color theme_base_color         #110d08;
+    @define-color theme_fg_color           #e0d9d5;
+    @define-color theme_selected_bg_color  #ae6a24;
+    @define-color theme_selected_fg_color  #ffffff;
+    @define-color borders                  #854719;
+}

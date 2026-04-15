@@ -1,0 +1,56 @@
+/* --- COFFEE-BEANS UNIFIED THEME (GTK4) --- */
+
+/* 1. LIGHT MODE (Default) */
+@define-color window_fg_backdrop_color      @window_fg_color;
+@define-color view_fg_backdrop_color        @view_fg_color;
+@define-color headerbar_fg_backdrop_color   @headerbar_fg_color;
+@define-color sidebar_fg_backdrop_color      @sidebar_fg_color;
+@define-color accent_color                   #ae6a24;
+@define-color accent_bg_color                #ae6a24;
+@define-color accent_fg_color                #e0d9d5;
+@define-color window_bg_color                #e0d9d5;
+@define-color window_fg_color                #110d08;
+@define-color view_bg_color                  #e0d9d5;
+@define-color view_fg_color                  #110d08;
+@define-color headerbar_bg_color             #b98f4e;
+@define-color headerbar_fg_color             #110d08;
+@define-color headerbar_backdrop_color       #e0d9d5;
+@define-color headerbar_border_color         #b98f4e;
+@define-color sidebar_bg_color               #d0ba97;
+@define-color sidebar_fg_color               #110d08;
+@define-color secondary_sidebar_bg_color      #d0ba97;
+@define-color card_bg_color                  #d0ba97;
+@define-color popover_bg_color               #d0ba97;
+@define-color dialog_bg_color                #e0d9d5;
+
+/* 2. DARK MODE OVERRIDE */
+@media (prefers-color-scheme: dark) {
+    @define-color window_fg_backdrop_color      @window_fg_color;
+    @define-color view_fg_backdrop_color        @view_fg_color;
+    @define-color headerbar_fg_backdrop_color   @headerbar_fg_color;
+    @define-color sidebar_fg_backdrop_color      @sidebar_fg_color;
+    @define-color accent_color                   #ae6a24;
+    @define-color accent_bg_color                #ae6a24;
+    @define-color accent_fg_color                #d0ba97;
+    @define-color window_bg_color                #110d08;
+    @define-color window_fg_color                #e0d9d5;
+    @define-color view_bg_color                  #110d08;
+    @define-color view_fg_color                  #e0d9d5;
+    @define-color headerbar_bg_color             #d0ba97;
+    @define-color headerbar_fg_color             #110d08;
+    @define-color headerbar_backdrop_color       #110d08;
+    @define-color headerbar_border_color         #854719;
+    @define-color sidebar_bg_color               #d0ba97;
+    @define-color sidebar_fg_color               #110d08;
+    @define-color secondary_sidebar_bg_color      #d0ba97;
+    @define-color card_bg_color                  #1a1612;
+    @define-color popover_bg_color               #d0ba97;
+    @define-color popover_fg_color               #854719;
+    @define-color dialog_bg_color                #110d08;
+}
+
+/* 3. SHARED UI TWEAKS (Keep these at the bottom) */
+.nautilus-window .navigation-sidebar {
+    background-color: @sidebar_bg_color;
+    color: @sidebar_fg_color;
+}

@@ -1,0 +1,19 @@
+/* GTK3 color overrides — gestionado por theme-changer */
+
+/* theme-changer: begin */
+@define-color theme_bg_color           #110d08;
+@define-color theme_base_color         #110d08;
+@define-color theme_fg_color           #e0d9d5;
+@define-color theme_text_color         #e0d9d5;
+@define-color theme_selected_bg_color  #ae6a24;
+@define-color theme_selected_fg_color  #ffffff;
+@define-color theme_unfocused_bg_color #110d08;
+@define-color theme_unfocused_fg_color #b98f4e;
+@define-color insensitive_bg_color     #1a1612;
+@define-color insensitive_fg_color     #b98f4e;
+@define-color insensitive_base_color   #1a1612;
+@define-color borders                  #854719;
+@define-color warning_color            #c9ce3b;
+@define-color error_color              #da4453;
+@define-color success_color            #27ae60;
+/* theme-changer: end */
