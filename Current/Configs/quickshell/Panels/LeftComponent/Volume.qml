@@ -38,7 +38,7 @@ Item {
 				opacity: rectangleHoverHandler.hovered ? 1 : 0
 				Behavior on opacity {
 					NumberAnimation {
-						duration: 200
+						duration: 300
 					}
 				}
 				visible: rectangleHoverHandler.hovered ? 1 : 0
