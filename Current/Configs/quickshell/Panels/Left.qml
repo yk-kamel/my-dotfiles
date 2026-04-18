@@ -26,6 +26,9 @@ PanelWindow {
 		Item {
 			Layout.fillHeight: true
 		}
+		Volume {
+			Layout.alignment: Qt.AlignHCenter
+		}
 
 		Clock {
 			Layout.alignment: Qt.AlignHCenter

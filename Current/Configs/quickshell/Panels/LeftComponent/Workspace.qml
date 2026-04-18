@@ -22,10 +22,18 @@ Rectangle {
 				Layout.alignment: Qt.AlignHCenter
 				width: 13
 				height: 13
-				color: Hyprland.workspaces.values.some(ws => ws.id === (index + 1)) ? border.color : T.c.Accent2
+				color: (index + 1) === Hyprland.focusedWorkspace.id ? T.c.Accent1 : T.c.Text2
 				radius: 10
-				border.width: 3.5
-				border.color: (index + 1) === Hyprland.focusedWorkspace.id ? T.c.Accent1 : T.c.Text2
+
+				Rectangle {
+					height: 5
+					width: height
+					radius: width
+					color: T.c.Accent2
+					anchors.centerIn: parent
+					visible: Hyprland.workspaces.values.some(ws => ws.id === (index + 1)) ? false : true
+				}
+
 
 				MouseArea {
 					anchors.fill : parent
