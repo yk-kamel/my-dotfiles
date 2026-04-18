@@ -19,6 +19,11 @@ Item {
 		HoverHandler {
 			id: rectangleHoverHandler
 		}
+		Behavior on height {
+			NumberAnimation {
+				duration: 100
+			}
+		}
 		ColumnLayout {
 			id: mainLayout
 			anchors.fill: parent
@@ -30,7 +35,13 @@ Item {
 
 
 			SecondaryVolumeRepater {
-				visible: rectangleHoverHandler.hovered ? true : false
+				opacity: rectangleHoverHandler.hovered ? 1 : 0
+				Behavior on opacity {
+					NumberAnimation {
+						duration: 200
+					}
+				}
+				visible: rectangleHoverHandler.hovered ? 1 : 0
 				anchors.bottom: mainSeparator.top
 				anchors.bottomMargin: 10
 			}
