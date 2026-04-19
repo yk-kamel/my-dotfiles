@@ -31,14 +31,14 @@ Rectangle {
 			anchors.topMargin: 5
 			height: 30
 			width: 30
-			radius: 5
+			radius: 10
 			Layout.alignment: Qt.AlignHCenter
 			color: "transparent"
 			Rectangle {
 				anchors.fill: parent
 				color: "red"
 				opacity: 0.3
-				radius: 5
+				radius: 10
 
 			}
 
@@ -67,7 +67,7 @@ Rectangle {
 					id: shutDownProcess
 					command: ["shutdown", "now"]
 				}
-				onClicked: { shutDownProcess.start() }
+				onClicked: { shutDownProcess.startDetached() }
 			}
 		}
 		Rectangle {
@@ -75,14 +75,14 @@ Rectangle {
 			anchors.topMargin: 5
 			height: 30
 			width: 30
-			radius: 5
+			radius: 10
 			Layout.alignment: Qt.AlignHCenter
 			color: "transparent"
 			Rectangle {
 				anchors.fill: parent
 				color: "yellow"
 				opacity: 0.3
-				radius: 5
+				radius: 10
 
 			}
 
@@ -109,9 +109,9 @@ Rectangle {
 				anchors.fill: parent
 				Process {
 					id: lockProcess
-					command: ["notify-send", "Hello!", "You clicked the button."]
+					command: ["hyprctl", "dispatch", "exit"]
 				}
-				onClicked: { lockProcess.start() }
+				onClicked: { lockProcess.startDetached() }
 			}
 		}
 		Rectangle {
@@ -119,14 +119,14 @@ Rectangle {
 			anchors.topMargin: 5
 			height: 30
 			width: 30
-			radius: 5
+			radius: 10
 			Layout.alignment: Qt.AlignHCenter
 			color: "transparent"
 			Rectangle {
 				anchors.fill: parent
 				color: "green"
 				opacity: 0.3
-				radius: 5
+				radius: 10
 
 			}
 
@@ -151,7 +151,11 @@ Rectangle {
 			MouseArea {
 				cursorShape: Qt.PointingHandCursor
 				anchors.fill: parent
-				onClicked: { reboot }
+				Process {
+					id: rebootProcess
+					command: ["reboot", "now"]
+				}
+				onClicked: { rebootProcess.startDetached() }
 			}
 		}
 		Item {}

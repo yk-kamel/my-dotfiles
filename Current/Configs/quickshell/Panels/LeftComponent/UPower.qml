@@ -36,7 +36,7 @@ import Quickshell.Services.UPower
 					readonly property color profileColor: (modelData === PowerProfile.PowerSaver ) ? "green" : (modelData === PowerProfile.Balanced ) ? "#069494" : "red"
 					height: 30
 					width: 30
-					radius: 5
+					radius: 10
 					Layout.alignment: Qt.AlignHCenter
 					color: "transparent"
 					anchors.bottom: (modelData === PowerProfile.Performance) ? parent.bottom : undefined
@@ -45,7 +45,7 @@ import Quickshell.Services.UPower
 						anchors.fill: parent
 						color: profileColor
 						opacity: 0.3
-						radius: 5
+						radius: 10
 
 					}
 
