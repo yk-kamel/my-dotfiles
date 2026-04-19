@@ -26,7 +26,14 @@ PanelWindow {
 		Item {
 			Layout.fillHeight: true
 		}
+		UPower {
+			Layout.alignment: Qt.AlignHCenter
+		}
+		Item {
+			height: 35
+		}
 		Volume {
+			id: volume
 			Layout.alignment: Qt.AlignHCenter
 		}
 
