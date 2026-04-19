@@ -18,7 +18,6 @@ PanelWindow {
 		Item {
 			height: 5
 			width: 0
-			anchors.right: 	parent
 		}
 		Workspace {
 			Layout.alignment: Qt.AlignHCenter
@@ -28,20 +27,18 @@ PanelWindow {
 		}
 		UPower {
 			Layout.alignment: Qt.AlignHCenter
-		}
-		Item {
-			height: 35
+			anchors.bottom: volume.top
 		}
 		Volume {
 			id: volume
 			Layout.alignment: Qt.AlignHCenter
+			anchors.bottom: clock.top
 		}
 
 		Clock {
+			id: clock
 			Layout.alignment: Qt.AlignHCenter
 			Layout.preferredWidth: parent.width
-			Layout.leftMargin: 3
-			Layout.rightMargin: 3
 		}
 
 		Item {

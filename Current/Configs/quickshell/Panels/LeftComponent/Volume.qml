@@ -6,7 +6,6 @@ import Quickshell.Services.Pipewire
 import QtQuick.Controls
 import "VolumeComponent"
 
-Item {
 
 	Rectangle {
 		anchors.horizontalCenter: parent.horizontalCenter
@@ -14,8 +13,7 @@ Item {
 		height: mainLayout.implicitHeight
 		width: 40
 		radius: 10
-		anchors.bottom: parent.bottom
-		anchors.bottomMargin: 5
+		anchors.bottomMargin: 10
 		HoverHandler {
 			id: rectangleHoverHandler
 		}
@@ -41,7 +39,7 @@ Item {
 						duration: 300
 					}
 				}
-				visible: rectangleHoverHandler.hovered ? 1 : 0
+				visible: rectangleHoverHandler.hovered ? true : false
 				anchors.bottom: mainSeparator.top
 				anchors.bottomMargin: 10
 			}
@@ -62,4 +60,3 @@ Item {
 			}
 		}
 	}
-}

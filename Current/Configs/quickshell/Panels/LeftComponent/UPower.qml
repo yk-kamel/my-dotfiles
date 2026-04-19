@@ -4,7 +4,6 @@ import QtQuick.Layouts
 import "../../Colors.js" as T
 import Quickshell.Services.UPower
 
-Item {
 
 	Rectangle {
 		anchors.horizontalCenter: parent.horizontalCenter
@@ -29,10 +28,13 @@ Item {
 			Item {
 				height: 0
 			}
+
 			Repeater {
 				model: [ PowerProfile.PowerSaver, PowerProfile.Balanced, PowerProfile.Performance ]
+
 				Rectangle {
 					property int profile: modelData
+					readonly property color profileColor: (modelData === PowerProfile.PowerSaver ) ? "green" : (modelData === PowerProfile.Balanced ) ? "#069494" : "red"
 					height: 30
 					width: 30
 					radius: 5
@@ -40,23 +42,18 @@ Item {
 					color: "transparent"
 					Rectangle {
 						anchors.fill: parent
-						color: (modelData === PowerProfile.PowerSaver ) ? "green"
-						: (modelData === PowerProfile.Balanced ) ? "#069494"
-						: "red"
-						opacity: 0.4
+						color: profileColor
+						opacity: 0.3
 						radius: 5
 
 					}
 
-					border.color: insideText.color
+					border.color: profileColor
 					border.width: ( PowerProfiles.profile == modelData ) ? 3 : 0
 
 					Text {
-						id: insideText
 						text: "󱐋"
-						color: (modelData === PowerProfile.PowerSaver ) ? "green"
-						: (modelData === PowerProfile.Balanced ) ? "#069494"
-						: "red"
+						color: profileColor
 						anchors.centerIn: parent
 						opacity: 100
 
@@ -81,4 +78,3 @@ Item {
 			}
 		}
 	}
-}

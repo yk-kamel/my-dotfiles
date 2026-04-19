@@ -19,6 +19,7 @@ ColumnLayout {
 	Repeater {
 		model: audioAppOutputTracker.linkGroups
         	Rectangle {
+        		readonly property int currentVolume:  Math.round(modelData.source.audio.volume *100)
         		color: "transparent"
         		height: 30
         		width: 30
@@ -28,8 +29,8 @@ ColumnLayout {
 			}
 			Text {
 				text: modelData.source.audio.muted ? ""
-				: (Math.round(modelData.source.audio.volume *100) >= 50)  ? ""
-				: (Math.round(modelData.source.audio.volume *100) >= 25)  ? ""
+				: (currentVolume >= 50)  ? ""
+				: (currentVolume >= 25)  ? ""
 				: ""
 				anchors.verticalCenter: parent.verticalCenter
 				anchors.left: parent.left
@@ -42,15 +43,13 @@ ColumnLayout {
 				hoverEnabled: true
 				cursorShape: Qt.PointingHandCursor
 				onClicked: {
-					if (modelData.source && modelData.source.audio) {
-                        			modelData.source.audio.muted = !modelData.source.audio.muted
-                        		}
+                			modelData.source.audio.muted = !modelData.source.audio.muted
                         	}
 
 
 				ToolTip {
 					visible: parent.containsMouse
-					text: modelData.source.properties["media.name"] + ":	" + Math.round(modelData.source.audio.volume * 100) + "%"
+					text: modelData.source.properties["media.name"] + ":	" + currentVolume
 					delay: 500
 					font.family: "Terminess Nerd Font"
 				}
