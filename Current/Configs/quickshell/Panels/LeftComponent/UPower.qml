@@ -11,8 +11,6 @@ import Quickshell.Services.UPower
 		height: mainLayout.implicitHeight
 		width: 40
 		radius: 10
-		anchors.bottom: parent.bottom
-		anchors.bottomMargin: 5
 		HoverHandler {
 			id: rectangleHoverHandler
 		}
@@ -24,6 +22,7 @@ import Quickshell.Services.UPower
 		ColumnLayout {
 			id: mainLayout
 			anchors.fill: parent
+			anchors.bottom: parent.bottom
 
 			Item {
 				height: 0
@@ -40,6 +39,8 @@ import Quickshell.Services.UPower
 					radius: 5
 					Layout.alignment: Qt.AlignHCenter
 					color: "transparent"
+					anchors.bottom: (modelData === PowerProfile.Performance) ? parent.bottom : undefined
+			    		anchors.bottomMargin: (modelData === PowerProfile.Performance) ? 5 : 0
 					Rectangle {
 						anchors.fill: parent
 						color: profileColor
@@ -63,7 +64,7 @@ import Quickshell.Services.UPower
 					opacity: (rectangleHoverHandler.hovered || ( PowerProfiles.profile == modelData )) ? 1 : 0
 					Behavior on opacity {
 						NumberAnimation {
-							duration: 300
+							duration: 100
 						}
 					}
 					MouseArea {
@@ -74,6 +75,7 @@ import Quickshell.Services.UPower
 				}
 			}
 			Item {
+				id: bottomItem
 				height: 0
 			}
 		}

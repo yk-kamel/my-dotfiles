@@ -14,20 +14,20 @@ PanelWindow {
 
 	ColumnLayout {
 		anchors.fill: parent
-
-		Item {
-			height: 5
-			width: 0
+		Power {
+			id: realPower
+			anchors.top: parent.top
+			anchors.topMargin: 15
 		}
 		Workspace {
 			Layout.alignment: Qt.AlignHCenter
-		}
-		Item {
-			Layout.fillHeight: true
+			anchors.top: realPower.bottom
+			anchors.topMargin: 5
 		}
 		UPower {
 			Layout.alignment: Qt.AlignHCenter
 			anchors.bottom: volume.top
+			anchors.bottomMargin: 5
 		}
 		Volume {
 			id: volume
@@ -39,12 +39,8 @@ PanelWindow {
 			id: clock
 			Layout.alignment: Qt.AlignHCenter
 			Layout.preferredWidth: parent.width
-		}
-
-		Item {
-			height: 5
-			width: 0
-			anchors.right: 	parent
+			anchors.bottom: parent.bottom
+			anchors.bottomMargin: 5
 		}
 	}
 }
